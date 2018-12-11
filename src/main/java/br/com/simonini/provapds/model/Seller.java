@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -34,6 +35,7 @@ public class Seller implements Serializable {
     private Double baseSalary;
 
     @OneToOne(cascade=CascadeType.ALL)
+    @NotNull(message = "A Seller must have a department")
     private Department department;
 
     public Seller(){}
