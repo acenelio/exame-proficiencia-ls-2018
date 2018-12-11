@@ -1,0 +1,12 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.4
+    ports:
+    - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=provapds
+      - POSTGRES_USER=provapds
+      - POSTGRES_PASSWORD=provapds
